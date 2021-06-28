@@ -1,11 +1,13 @@
 import Navbar from "./components/navbar/navbar";
+import Routes from "./Routes";
 
 function App() {
-  return (
-    <div className="m-2">
-      <Navbar />
-    </div>
-  );
+    return (
+        <div className="m-2">
+            <Navbar />
+            <Routes />
+        </div>
+    );
 }
 
 export default App;
