@@ -30,7 +30,7 @@ export default function HomePage() {
                             />
                             <label class="label">
                                 {" "}
-                                <a href="#" class="label-text-alt">
+                                <a href="/" class="label-text-alt">
                                     Forgot password?
                                 </a>{" "}
                             </label>
