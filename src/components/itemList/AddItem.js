@@ -3,6 +3,7 @@ import React from "react";
 
 export default function AddItem() {
     const { addItemHandler, items } = React.useContext(ItemListContext);
+    const [food, setFood] = React.useState(null);
 
     console.log(items);
 
