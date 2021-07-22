@@ -2,12 +2,13 @@ import { ItemListContext } from "./ItemListProvider";
 import React from "react";
 
 export default function AddItem() {
-    const { addItemHandler, items } = React.useContext(ItemListContext);
+    const { addItemHandler } = React.useContext(ItemListContext);
     const [food, setFood] = React.useState(null);
 
-    console.log(items);
-
-    //TODO: Add food handler, add food to state
+    const handleFoodSubmission = () => {
+        addItemHandler(food);
+        setFood(null);
+    };
 
     return (
         <div className="form-control">
@@ -17,12 +18,14 @@ export default function AddItem() {
             <div className="relative">
                 <input
                     type="text"
+                    value={food ? food : ""}
                     placeholder={"enter food"}
                     className="w-full pr-16 input input-primary input-bordered"
+                    onChange={e => setFood(e.target.value)}
                 />
                 <button
                     className="absolute right-0 top-0 rounded-l-none btn btn-primary"
-                    onClick={e => addItemHandler("banana")}
+                    onClick={() => handleFoodSubmission()}
                 >
                     Add
                 </button>
